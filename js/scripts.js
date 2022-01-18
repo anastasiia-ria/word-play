@@ -37,22 +37,21 @@ $(document).ready(function() {
     });
 
     console.log(multiDimArray.sort().reverse());
-    // countArraySorted = countArray.sort();
-    
-    // for (i=0; i < countArraySorted.length; i++) {
-    //   countArraySorted[i].indexOf
-
     
     multiDimArray.sort().reverse().forEach(function(obj) {
       $('ul#result').append("<li>" +  obj[1] + " " + obj[0] +  "</li>");
     });
-      
-
-
-
     
     $("#sentence").val("");  
   });
       
+  const ranks = ["ace", "2" , "3", "4", "5" , "6", "7",  "8" , "9", "10", "jack" , "queen", "king"];
+  const suits = ["spades", "hearts", "diamonds", "clubs"];
+
+  suits.forEach(function(suit) {
+    ranks.forEach(function(rank) {
+      $('ul#playing-card-list').append("<li>" + rank + " of " + suit + "</li>");
+    });
+  });
 });
     
